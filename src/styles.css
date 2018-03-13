@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html, body, app-root {
+  min-height: 100vh;
+  height: 100%;
+}
+body {
+  font-size: 0.9em;
+  line-height: 1.1em;
+
+  background: #E0F8F7
+}
+p, h1 {
+  font-family: "Verdana";
+}

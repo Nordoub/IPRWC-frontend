@@ -6,8 +6,11 @@ import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
 import {User} from './user';
-import {AuthorizationService} from '../../authorization.service';
-import {ApiService} from '../api.service';
+import {ApiService} from '../shared/api.service';
+import {AuthorizationService} from '../shared/authorization.service';
+
+
+
 
 @Injectable()
 export class UserService {
@@ -46,8 +49,36 @@ export class UserService {
 
 
   }
+
+  public register(user: User): void
+  {
+    let data =
+      {
+        username: user.username,
+        password: user.password,
+        firstname: user.firstname,
+        preposition: user.preposition,
+        lastname: user.lastname,
+        email: user.email,
+        role: user.role
+      };
+    this.api.post<void>('users', data).subscribe
+    (
+      response => {
+        alert('Het aanmaken is gelukt');
+      },
+      error =>{
+        alert('Het aanmaken is niet gelukt');
+      }
+    )
+  }
+
+  public getAll(): Observable<User[]> {
+    return this.api.get<User[]>('users')
+  }
+
   private goHome()
   {
-    this.router.navigate(['']);
+    this.router.navigate(['products']);
   }
 }
