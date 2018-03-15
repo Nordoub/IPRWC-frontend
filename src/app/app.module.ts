@@ -20,8 +20,42 @@ import {AuthAdminGuard} from './auth-admin-guard.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthorizationService} from './shared/authorization.service';
 import {ApiService} from './shared/api.service';
-
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+} from '@angular/material';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {ProductService} from './products/product.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +73,20 @@ import {ApiService} from './shared/api.service';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatCheckboxModule,
+    MatMenuModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatTabsModule,
+    // MatDividerModule
+
+
+
   ],
   providers: [
     ApiService,
@@ -48,7 +95,8 @@ import {ApiService} from './shared/api.service';
     AuthGuard,
     AuthAdminGuard,
     AppRoutingModule,
-    LoginComponent
+    LoginComponent,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })

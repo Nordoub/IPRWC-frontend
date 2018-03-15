@@ -40,6 +40,7 @@ export class UserService {
     )
   }
 
+
   public setLoginSession(user: User, local: boolean): void {
     let storage = local ? localStorage : sessionStorage;
 
@@ -79,6 +80,6 @@ export class UserService {
 
   private goHome()
   {
-    this.router.navigate(['products']);
+    this.router.navigate(['/']);
   }
 }

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       authorizationString = localStorage.getItem('authorization');
     }
     if(authorizationString !== null){
-      this.router.navigate([''])
+      this.router.navigate(['/'])
     }
     // this.allUsers = this.userService.getAll()
   }

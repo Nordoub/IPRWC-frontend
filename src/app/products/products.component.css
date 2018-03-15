@@ -1,0 +1,15 @@
+mat-grid-tile {
+  background: lightblue;
+}
+/*:host {*/
+  /*flex-grow: 1;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+/*}*/
+
+
+/*#test {*/
+  /*background: url("../resources/images/header2.png") no-repeat center 0;*/
+
+/*}*/

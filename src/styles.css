@@ -1,14 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 html, body, app-root {
   min-height: 100vh;
   height: 100%;
 }
-body {
+:host {
   font-size: 0.9em;
   line-height: 1.1em;
-
+}
+body {
+  margin:0;
+  padding:0;
   background: #E0F8F7
 }
-p, h1 {
+p, h1, li, a {
   font-family: "Verdana";
 }

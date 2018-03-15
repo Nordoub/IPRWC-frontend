@@ -17,5 +17,9 @@ export class LeftmenuComponent implements OnInit {
 
   }
 
+  navigate() {
+    this.router.navigate(['products']);
+
+  }
 
 }

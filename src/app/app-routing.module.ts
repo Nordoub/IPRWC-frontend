@@ -1,6 +1,3 @@
-/**
- * Created by School on 7-3-2018.
- */
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ProductsComponent} from './products/products.component';

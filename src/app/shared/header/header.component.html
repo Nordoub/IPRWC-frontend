@@ -1,6 +1,34 @@
 <div class="banner">
   HEADER
-  <nav>
-    <a (click)="logout()" routerLink="/login" class="link logout-link">log uit</a>
-  </nav>
-  </div>
+  <!--<mat-menu #appMenu="matMenu">-->
+    <!--<button mat-menu-item>Mijn gegevens</button>-->
+    <!--<button mat-menu-item>Bestellingen</button>-->
+    <!--<button (click)="logout()"mat-menu-item>Uitloggen</button>-->
+  <!--</mat-menu>-->
+  <!--<button mat-icon-button [matMenuTriggerFor]="appMenu">-->
+    <!--<mat-icon>Opties</mat-icon>-->
+  <!--</button>-->
+</div>
+<mat-toolbar color="primary">
+  <span>IT-webshop</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item>Mijn gegevens</button>
+    <button mat-menu-item>Bestellingen</button>
+    <!--<button mat-menu-item routerLink="/admin" *ngIf="adminBool">Admin opties</button>-->
+    <button (click)="logout()"mat-menu-item>Uitloggen</button>
+  </mat-menu>
+
+  <button mat-icon-button [matMenuTriggerFor]="userMenu">
+    <mat-icon><i class="material-icons md-48">account_circle</i>gebruiker</mat-icon>
+  </button>
+  </mat-toolbar>
+<!--<div class="bannerOpties">-->
+
+  <!--<mat-card>Simple card</mat-card>-->
+<!--</div>-->
+
+
