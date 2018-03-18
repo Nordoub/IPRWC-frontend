@@ -56,6 +56,7 @@ import {
 } from '@angular/material';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {ProductService} from './products/product.service';
+import { BestellingComponent } from './products/bestelling/bestelling.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import {ProductService} from './products/product.service';
     RightmenuComponent,
     LoginComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    BestellingComponent
   ],
   imports: [
     BrowserModule,
@@ -78,11 +80,12 @@ import {ProductService} from './products/product.service';
     MatButtonModule, MatCheckboxModule,
     MatMenuModule,
     MatCardModule,
-    MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatGridListModule,
     MatTabsModule,
+    MatExpansionModule,
+
     // MatDividerModule
 
 

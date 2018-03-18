@@ -11,7 +11,8 @@ export class Product
     public gecheckt?: number,
     public prijs?: number,
     public product_gebruiker_id?: number,
-    public imgURL?: string)
+    public imgURL?: string,
+    public categorie?: string)
   {
 
 }

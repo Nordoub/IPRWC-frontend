@@ -11,6 +11,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class LeftmenuComponent implements OnInit {
 
+
   constructor(public router: Router, private userService:UserService) { }
 
   ngOnInit() {

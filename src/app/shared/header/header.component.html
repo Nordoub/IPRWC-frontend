@@ -15,20 +15,22 @@
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
+
+  <p *ngIf="firstName!=null">Welkom {{firstName}}</p>
+
+
+
   <mat-menu #userMenu="matMenu">
-    <button mat-menu-item>Mijn gegevens</button>
-    <button mat-menu-item>Bestellingen</button>
-    <!--<button mat-menu-item routerLink="/admin" *ngIf="adminBool">Admin opties</button>-->
-    <button (click)="logout()"mat-menu-item>Uitloggen</button>
+    <button mat-menu-item *ngIf="firstName!=null" routerLink="/user">Mijn gegevens</button>
+    <button mat-menu-item *ngIf="firstName!=null" routerLink="/bestelling">Bestellingen</button>
+    <button mat-menu-item routerLink="/admin" *ngIf="admin">Admin opties</button>
+    <button (click)="logout()"mat-menu-item *ngIf="firstName!=null">Uitloggen</button>
+    <button mat-menu-item routerLink="/login" *ngIf="firstName===null">Inloggen</button>
+
   </mat-menu>
 
   <button mat-icon-button [matMenuTriggerFor]="userMenu">
     <mat-icon><i class="material-icons md-48">account_circle</i>gebruiker</mat-icon>
   </button>
   </mat-toolbar>
-<!--<div class="bannerOpties">-->
-
-  <!--<mat-card>Simple card</mat-card>-->
-<!--</div>-->
-
 

@@ -1,19 +1,55 @@
 <div id="left-menu" class="side-menu-wrap">
-  <nav id="main-menu" class="left-menu">
+  <!--<nav id="main-menu" class="left-menu">-->
+    <!--<ul>-->
+      <!--<li class="list"><button mat-raised-button class="listbutton" routerLink="/">Producten</button></li>-->
+      <!--<li class="list"><button mat-raised-button class="listbutton" routerLink="/">Contact</button></li>-->
+      <!--&lt;!&ndash;<li><a [class.selected]="router.url === '/blabla'" routerLink="/blabla" class="link" >blabla</a></li>&ndash;&gt;-->
+      <!--<li class="list"><button mat-raised-button class="listbutton" routerLink="/">Voorwaarden</button></li>-->
+    <!--</ul>-->
+  <!--</nav>-->
+  <mat-expansion-panel routerLink="/" class="lefttab">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Producten
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel class="lefttab">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Contact
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+<div class="expansion">
+    <p>Email: s1104258@student.hsleiden.nl</p>
+    <p>Telefoonnummer: 06-92818591</p>
+    <p>Openingstijden:</p>
     <ul>
-      <li><a [class.selected]="router.url === '/products'" routerLink="/" class="link" >products</a></li>
-      <li><a [class.selected]="router.url === '/admin'" routerLink="/admin" class="link">admin</a></li>
-      <li><a [class.selected]="router.url === '/blabla'" routerLink="/blabla" class="link" >blabla</a></li>
-      <li><a [class.selected]="router.url === '/blablabla'" routerLink="/producten" class="link" >blablabla</a></li>
-      <li><a routerLink="/wistjedat" class="link" >blabla</a></li>
+    <li>Maandag: 08:00 t/m 17:00</li>
+    <li>Dinsdag: 08:00 t/m 17:00</li>
+    <li>Woensdag: 08:00 t/m 17:00</li>
+    <li>Donderdag: 08:00 t/m 17:00</li>
+    <li>Vrijdag: 08:00 t/m 17:00</li>
+    <li>Zaterdag: 12:00 t/m 17:00</li>
+    <li>Zondag: gesloten</li>
+  </ul>
+</div>
+  </mat-expansion-panel>
 
-      <li id="admin-link"><a [class.selected]="router.url === '/admin'" routerLink="/admin" class="link" *ngIf="!adminBoolean">
-        admin tools
-      </a></li>
-
-    </ul>
-  </nav>
-  <button mat-raised-button routerLink="/">Producten</button>
-  <button mat-raised-button routerLink="/">Contact</button>
-  <button mat-raised-button routerLink="/">Voorwaarden</button>
+  <mat-expansion-panel class="lefttab">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Voorwaarden
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+<div class="expansion">
+    <p><b>1. Betaling</b></p>
+    <p>Voor zover niet anders is overeengekomen, dienen de door de consument verschuldigde bedragen te worden voldaan binnen 7 werkdagen na het ingaan van de bedenktermijn als bedoeld in artikel 6 lid 1.
+    In geval van een overeenkomst tot het verlenen van een dienst, vangt deze termijn aan nadat de consument de bevestiging van de overeenkomst heeft ontvangen. De consument heeft de plicht om onjuistheden in verstrekte of vermelde betaalgegevens onverwijld aan de ondernemer te melden. In geval van wanbetaling van de consument heeft de ondernemer behoudens wettelijke beperkingen, het recht om de vooraf aan de consument kenbaar gemaakte redelijke kosten in rekening te brengen.
+    </p>
+</div>
+  </mat-expansion-panel>
 </div>

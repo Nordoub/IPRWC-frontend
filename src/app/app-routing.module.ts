@@ -7,6 +7,7 @@ import {UserComponent} from './user/user.component';
 import {AppComponent} from './app.component';
 import {AuthAdminGuard} from './auth-admin-guard.service';
 import {AuthGuard} from './auth-guard.service';
+import {BestellingComponent} from './products/bestelling/bestelling.component';
 
 // import {AuthGuard} from "./auth-guard.service";
 // import {AuthAdminGuard} from "./auth-admin-guard.service";
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'admin', component: AdminComponent, canActivate: [AuthAdminGuard] },
   { path: '', component: ProductsComponent},
-  { path: 'user', component: UserComponent, canActivate: [AuthGuard] }
+  { path: 'user', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'bestelling', component: BestellingComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -27,4 +29,3 @@ const routes: Routes = [
 export class AppRoutingModule {
 
 }
-

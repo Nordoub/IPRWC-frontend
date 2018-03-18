@@ -4,49 +4,50 @@
   <!--<mat-grid-tile>3</mat-grid-tile>-->
   <!--<mat-grid-tile>4</mat-grid-tile>-->
 <!--</mat-grid-list>-->
-
-<mat-tab-group>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      Videokaarten
-    </ng-template>
-    <mat-grid-list cols="2" rowHeight="2:1">
-      <mat-grid-tile id="test">
-        {{user.id}}
-        {{user.firstname}}
-        </mat-grid-tile>
-      <mat-grid-tile>1</mat-grid-tile>
-      <mat-grid-tile>1</mat-grid-tile>
-      <mat-grid-tile>1</mat-grid-tile>
-    </mat-grid-list>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      Moederborden
-    </ng-template>
-    <h1>Terrible sushi restaurants</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      Processors
-    </ng-template>
-    <h1>Terrible sushi restaurants</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      Intern geheugen
-    </ng-template>
-    <h1>Terrible sushi restaurants</h1>
-    <p>...</p>
-  </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      Solid State Drives
-    </ng-template>
-    <h1>Terrible sushi restaurants</h1>
-    <p>...</p>
-  </mat-tab>
-</mat-tab-group>
+<div id="productscomponent">
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Videokaarten
+      </ng-template>
+      <mat-grid-list cols="3" rowHeight="2:1">
+        <mat-grid-tile id="test">
+          {{user.id}}
+          {{user.firstname}}
+          </mat-grid-tile>
+        <mat-grid-tile>1</mat-grid-tile>
+        <mat-grid-tile>1</mat-grid-tile>
+        <mat-grid-tile>1</mat-grid-tile>
+      </mat-grid-list>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Moederborden
+      </ng-template>
+      <h1>Terrible sushi restaurants</h1>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Processors
+      </ng-template>
+      <h1>Terrible sushi restaurants</h1>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Intern geheugen
+      </ng-template>
+      <h1>Terrible sushi restaurants</h1>
+      <p>...</p>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        Solid State Drives
+      </ng-template>
+      <h1>Terrible sushi restaurants</h1>
+      <p>...</p>
+    </mat-tab>
+  </mat-tab-group>
+</div>
