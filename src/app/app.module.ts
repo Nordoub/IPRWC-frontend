@@ -57,6 +57,7 @@ import {
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {ProductService} from './products/product.service';
 import { BestellingComponent } from './products/bestelling/bestelling.component';
+import {SharedService} from './shared/shared.service';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { BestellingComponent } from './products/bestelling/bestelling.component'
     MatToolbarModule,
     MatGridListModule,
     MatTabsModule,
-    MatExpansionModule,
+    MatExpansionModule
+    //MatSlideToggleModule
 
     // MatDividerModule
 
@@ -99,7 +101,8 @@ import { BestellingComponent } from './products/bestelling/bestelling.component'
     AuthAdminGuard,
     AppRoutingModule,
     LoginComponent,
-    ProductService
+    ProductService,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })

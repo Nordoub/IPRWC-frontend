@@ -16,16 +16,17 @@
   <span class="example-fill-remaining-space"></span>
 
 
-  <p *ngIf="firstName!=null">Welkom {{firstName}}</p>
+  <p *ngIf="name!=null" >Welkom {{name}}</p>
 
 
 
-  <mat-menu #userMenu="matMenu">
-    <button mat-menu-item *ngIf="firstName!=null" routerLink="/user">Mijn gegevens</button>
-    <button mat-menu-item *ngIf="firstName!=null" routerLink="/bestelling">Bestellingen</button>
-    <button mat-menu-item routerLink="/admin" *ngIf="admin">Admin opties</button>
-    <button (click)="logout()"mat-menu-item *ngIf="firstName!=null">Uitloggen</button>
-    <button mat-menu-item routerLink="/login" *ngIf="firstName===null">Inloggen</button>
+
+  <mat-menu #userMenu="matMenu" >
+    <button mat-menu-item *ngIf="name!=null" routerLink="/user">Mijn gegevens</button>
+    <button mat-menu-item *ngIf="name!=null" routerLink="/bestelling">Bestellingen</button>
+    <button mat-menu-item routerLink="/admin" *ngIf="role=='admin'">Admin opties</button>
+    <button (click)="logout()"mat-menu-item *ngIf="name!=null">Uitloggen</button>
+    <button mat-menu-item routerLink="/login" *ngIf="name==null">Inloggen</button>
 
   </mat-menu>
 

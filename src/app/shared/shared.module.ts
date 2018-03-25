@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {ProductService} from '../products/product.service';
+import {SharedService} from './shared.service';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import {ProductService} from '../products/product.service';
     ApiService,
     AuthorizationService,
     UserService,
-    ProductService
+    ProductService,
+    SharedService
 
   ],
 })

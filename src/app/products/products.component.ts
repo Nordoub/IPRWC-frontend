@@ -21,11 +21,14 @@ export class ProductsComponent implements OnInit {
   public allProducts: Observable<Product[]>;
   user = new User(1, 'root','root','norddin','-','oubahman','test@hotmail.com','admin');
 
-  constructor(private userService:UserService, private productService:ProductService) { }
+  constructor(private userService:UserService, private productService:ProductService) {
+
+  }
 
   ngOnInit() {
     this.allProducts = this.productService.getAllProducts();
     console.log(this.allProducts)
+    // console.log(this.userService.IsUserLoggedIn)
   }
 
 }

@@ -1,14 +1,14 @@
 /**
  * Created by School on 10-3-2018.
  */
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-import {Subject} from 'rxjs/Subject';
 import {User} from './user';
 import {ApiService} from '../shared/api.service';
 import {AuthorizationService} from '../shared/authorization.service';
-
+import { Subject } from 'rxjs/Subject';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 
 
@@ -17,9 +17,22 @@ export class UserService {
   selectedUser: Subject<User> = new Subject<User>();
   allUsers$: Observable<User>;
   editUser: User;
+  // onMainEvent: EventEmitter = new EventEmitter();
+  // public IsUserLoggedIn: Subject<boolean> = new Subject<boolean>();
+  // public IsUserAdmin: Subject<boolean> = new Subject<boolean>();
+  private messageSourceName = new BehaviorSubject<string>(null);
+  currentName = this.messageSourceName.asObservable();
+  private messageSourceRole = new BehaviorSubject<string>(null);
+  currentRole = this.messageSourceRole.asObservable();
 
   constructor(private api: ApiService, private authService: AuthorizationService, private router: Router) {
 
+  }
+  changeName(message: string) {
+    this.messageSourceName.next(message)
+  }
+  changeRole(message: string) {
+    this.messageSourceRole.next(message)
   }
 
   public login(user: User, remember: boolean): void {
@@ -29,7 +42,10 @@ export class UserService {
       authenticator => {
         this.authService.storeAuthorization(authenticator, remember);
         this.setLoginSession(authenticator, remember);
-
+        // this.IsUserLoggedIn.next(true);
+        // if(authenticator.role == 'admin') {
+        //   this.IsUserAdmin.next(true);
+        // }
         this.goHome();
 
       },
@@ -47,6 +63,8 @@ export class UserService {
     storage.setItem('firstName', user.firstname);
     storage.setItem('role', user.role);
     storage.setItem('userName', user.username);
+    this.changeName(sessionStorage.getItem('firstName'))
+    this.changeRole(sessionStorage.getItem('role'))
 
 
   }
