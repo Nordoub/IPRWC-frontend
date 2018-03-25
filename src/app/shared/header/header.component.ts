@@ -19,8 +19,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     // this.checkAdmin()
-    this.userService.currentName.subscribe(name => this.name = name) // username/role etc gaat weg bij refresh, fixen
-    this.userService.currentRole.subscribe(role => this.role = role)
+    if(sessionStorage.getItem('firstName') == null) {
+      this.userService.currentName.subscribe(name => this.name = name) // username/role etc gaat weg bij refresh, fixen
+      this.userService.currentRole.subscribe(role => this.role = role)
+    } else {
+      this.userService.changeName(sessionStorage.getItem('firstName'))
+      this.userService.changeRole(sessionStorage.getItem('role'))
+      this.userService.currentName.subscribe(name => this.name = name) // username/role etc gaat weg bij refresh, fixen
+      this.userService.currentRole.subscribe(role => this.role = role)
+    }
   }
 
   // public checkAdmin(): boolean {
