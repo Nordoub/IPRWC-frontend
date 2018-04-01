@@ -3,11 +3,9 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { ProductsComponent } from './products/products.component';
+import {MessageComponent, ProductsComponent} from './products/products.component';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
-// import {AuthAdminGuard} from '../auth-admin-guard.service';
-// import {AuthGuard} from '../auth-guard.service';
 import { HeaderComponent } from './shared/header/header.component';
 import { LeftmenuComponent } from './shared/leftmenu/leftmenu.component';
 import { RightmenuComponent } from './shared/rightmenu/rightmenu.component';
@@ -20,7 +18,6 @@ import {AuthAdminGuard} from './auth-admin-guard.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthorizationService} from './shared/authorization.service';
 import {ApiService} from './shared/api.service';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -54,10 +51,12 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {ProductService} from './products/product.service';
 import { BestellingComponent } from './products/bestelling/bestelling.component';
-import {SharedService} from './shared/shared.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import 'hammerjs';
+import {Ng2SmartTableModule} from 'ng2-smart-table';
 
 @NgModule({
   declarations: [
@@ -69,7 +68,8 @@ import {SharedService} from './shared/shared.service';
     LoginComponent,
     UserComponent,
     AdminComponent,
-    BestellingComponent
+    BestellingComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -85,8 +85,15 @@ import {SharedService} from './shared/shared.service';
     MatToolbarModule,
     MatGridListModule,
     MatTabsModule,
-    MatExpansionModule
-    //MatSlideToggleModule
+    MatExpansionModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    Ng2SmartTableModule,
+    MatSnackBarModule,
+
+    //MatSlideToggleModule,
 
     // MatDividerModule
 
@@ -101,9 +108,9 @@ import {SharedService} from './shared/shared.service';
     AuthAdminGuard,
     AppRoutingModule,
     LoginComponent,
-    ProductService,
-    SharedService
+    ProductService
   ],
+  entryComponents: [MessageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

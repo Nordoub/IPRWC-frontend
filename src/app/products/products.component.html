@@ -4,6 +4,7 @@
   <!--<mat-grid-tile>3</mat-grid-tile>-->
   <!--<mat-grid-tile>4</mat-grid-tile>-->
 <!--</mat-grid-list>-->
+
 <div id="productscomponent">
   <mat-tab-group>
     <mat-tab>
@@ -11,43 +12,86 @@
         Videokaarten
       </ng-template>
       <mat-grid-list cols="3" rowHeight="2:1">
-        <mat-grid-tile id="test">
-          {{user.id}}
-          {{user.firstname}}
-          </mat-grid-tile>
-        <mat-grid-tile>1</mat-grid-tile>
-        <mat-grid-tile>1</mat-grid-tile>
-        <mat-grid-tile>1</mat-grid-tile>
+        <!--<mat-grid-tile id="test">-->
+        <!--{{product.omschrijving}}-->
+          <!--</mat-grid-tile>-->
+        <ng-container *ngFor="let product of allProducts | async">
+          <mat-card  class="example-card"  *ngIf="product.categorie == 'videokaart'">
+            <mat-card-header>
+            <mat-card-title>{{product.omschrijving}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
+            <mat-card-actions>
+              <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
+
       </mat-grid-list>
-      <p>...</p>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
         Moederborden
       </ng-template>
-      <h1>Terrible sushi restaurants</h1>
-      <p>...</p>
+      <ng-container *ngFor="let product of allProducts | async">
+        <mat-card  class="example-card"  *ngIf="product.categorie == 'moederbord'">
+          <mat-card-header>
+            <mat-card-title>{{product.omschrijving}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
+          <mat-card-actions>
+            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
         Processors
       </ng-template>
-      <h1>Terrible sushi restaurants</h1>
-      <p>...</p>
+      <ng-container *ngFor="let product of allProducts | async">
+        <mat-card  class="example-card"  *ngIf="product.categorie == 'processor'">
+          <mat-card-header>
+            <mat-card-title>{{product.omschrijving}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
+          <mat-card-actions>
+            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
         Intern geheugen
       </ng-template>
-      <h1>Terrible sushi restaurants</h1>
-      <p>...</p>
+      <ng-container *ngFor="let product of allProducts | async">
+        <mat-card  class="example-card"  *ngIf="product.categorie == 'intern geheugen'">
+          <mat-card-header>
+            <mat-card-title>{{product.omschrijving}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
+          <mat-card-actions>
+            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
         Solid State Drives
       </ng-template>
-      <h1>Terrible sushi restaurants</h1>
-      <p>...</p>
+      <ng-container *ngFor="let product of allProducts | async">
+        <mat-card  class="example-card"  *ngIf="product.categorie == 'ssd'">
+          <mat-card-header>
+            <mat-card-title>{{product.omschrijving}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
+          <mat-card-actions>
+            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
     </mat-tab>
   </mat-tab-group>
 </div>

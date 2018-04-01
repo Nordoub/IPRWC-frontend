@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {User} from '../user/user';
 import {UserService} from '../user/user.service';
-import {Observable} from 'rxjs/Observable';
-import {SharedService} from '../shared/shared.service';
+
 
 
 @Component({
@@ -15,14 +14,9 @@ export class LoginComponent implements OnInit {
 
   user: User = new User();
   remember;
-  // public allUsers: Observable<User[]>;
-  // isUserLoggedIn: boolean;
   name:string;
   role:string;
   constructor(private userService: UserService, private router: Router) {
-    // this.userService.IsUserLoggedIn.subscribe( value => {
-    //   this.isUserLoggedIn = value;
-    // });
   }
 
   ngOnInit() {

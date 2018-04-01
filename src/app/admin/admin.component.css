@@ -1,0 +1,282 @@
+/*.example-headers-align .mat-expansion-panel-header-title,*/
+/*.example-headers-align .mat-expansion-panel-header-description {*/
+  /*flex-basis: 0;*/
+/*}*/
+
+/*.example-headers-align .mat-expansion-panel-header-description {*/
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+/*}*/
+
+#admincomponent {
+  /*alignment: center;*/
+  /*width: 70%;*/
+  /*!*text-align: center;*!*/
+  /*!*display: flex;*!*/
+  /*justify-content: center;*/
+}
+
+.table tr:hover td {
+  background-color: #F2F2F2 !important;
+}
+
+#table-wrapper {
+  position:relative;
+  background-color: white;
+}
+
+#table-scroll {
+  height:600px;
+  overflow:auto;
+  margin-top:20px;
+}
+
+#table-wrapper table {
+  width:100%;
+}
+
+#table-wrapper table * {
+  background:beige;
+  color:black;
+}
+
+#table-wrapper table thead th .text {
+  position:absolute;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+#aanmaken {
+  margin:1px;
+}
+.mat-accordion, .mat-expansion-panel {
+  width:1000px !important;
+
+  /*alignment: center;*/
+  margin-left: 25%;
+}
+
+/*.mat-tab, .mat-tab-group, .mat-tab-label {*/
+  /*alignment: center !important;*/
+  /*align-content: center;*/
+  /*align-self: center;*/
+  /*align-items: center;*/
+/*}*/
+/*___________________________________*/
+th {
+  border-bottom: 1px solid black;
+  font-size: 1.05em;
+  padding: 5px;
+  background-color: black;
+}
+
+/*.mat-card {*/
+  /*width: 1000px;*/
+  /*margin-right: 50%;*/
+  /*margin-left: 50%;*/
+/*}*/
+
+
+.table tr.active td {
+  background-color: #F2F2F2 !important;
+  color: white;
+}
+
+.online {
+  border: 10px solid black;
+  padding: 100px;
+}
+
+td {
+  border-bottom: 1px solid lightgrey;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.table tr:hover td {
+  background-color: #F2F2F2 !important;
+}
+
+#table-wrapper {
+  position:relative;
+  background-color: white;
+
+}
+
+#table-scroll {
+  height:600px;
+  overflow:auto;
+  margin-top:20px;
+  //border: 1px solid black;
+  float: left;
+}
+
+#table-wrapper table {
+  width:100%;
+}
+
+#table-wrapper table * {
+  background:beige;
+  color:black;
+}
+
+#table-wrapper table thead th .text {
+  position:absolute;
+  z-index:2;
+  height:20px;
+  width:35%;
+  border:1px solid red;
+}
+
+.inputbutton:hover {
+  opacity: 0.75;
+}
+
+.inputbutton {
+  background-color: #d7625b;
+  min-width: 200px;
+  font-size: 1em;
+  color: white;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.inputbutton:last-of-type {
+  margin-right: 0;
+}
+
+#productbuttons {
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 4px solid #d7625b;
+  margin-bottom: 15px;
+  padding: 0 0 10px 40px;
+}
+
+.table tr.active td {
+  background-color:#01DFD7 !important;
+  color: white;
+}
+
+/* Structure */
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+:host /deep/ tr:hover {
+  background-color: #F2F2F2 !important;
+  border: 2px !important;
+  width: auto !important;
+  min-width: 500px !important;
+}
+
+:host /deep/ td {
+  min-width: 110px;
+  border-bottom: 1px solid lightgrey;
+}
+
+:host /deep/ table {
+  background-color: #FDFBFB;
+}
+
+:host /deep/ .omschrijvingKolom {
+  margin-right: 200px!important;
+  padding-right: 200px!important;
+}
+
+app-products a, :host /deep/ table a {
+  color: #d7625b!important;
+}
+#add-client-menu {
+  float: right;
+  /*position: absolute;*/
+  margin-top: 10px;
+  right: 0;
+  margin-right: 10px;
+
+}
+
+#add-client-menu button {
+  background: none;
+  height: 100px;
+  width: 100px;
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+#add-client-menu button {
+  height: auto;
+  width: auto;
+  background: #70be69;
+  color: white;
+  padding: 4px 12px;
+  font-size: 1.05em;
+}
+
+#edit-client-menu button {
+  background: #93d38d;
+}
+
+#add-client-menu button i {
+  vertical-align: middle;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+#adduser {
+  background: url("../resources/images/adduser.png") no-repeat center 0;
+  height: 100px;
+  width: 100px;
+  background-size: 100px 100px;
+  /*margin-right: 1%;*/
+  margin: 5%;
+  float: right;
+
+}
+#edituser {
+  background: url("../resources/images/edituser.png") no-repeat center 0;
+  height: 100px;
+  width: 100px;
+  background-size: 100px 100px;
+  /*margin-right: 1%;*/
+  margin: 5%;
+  float: right;
+}
+#knoppen {
+  display: inline-block;
+  float: right;
+  margin-left: -2%;
+  margin-top: 2%;
+  margin-right: 1%;
+
+}
+:host /deep/ tr:hover {
+  background-color: #F2F2F2 !important;
+  border: 2px !important;
+  width: auto !important;
+  min-width: 500px !important;
+}
+
+:host /deep/ td {
+  min-width: 110px;
+  border-bottom: 1px solid lightgrey;
+}
+
+:host /deep/ table {
+  background-color: #FDFBFB;
+}

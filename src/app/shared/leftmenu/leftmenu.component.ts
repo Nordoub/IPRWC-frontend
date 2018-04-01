@@ -11,7 +11,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class LeftmenuComponent implements OnInit {
 
-
+  step = 0;
   constructor(public router: Router, private userService:UserService) { }
 
   ngOnInit() {
@@ -22,5 +22,15 @@ export class LeftmenuComponent implements OnInit {
     this.router.navigate(['products']);
 
   }
+  setStep(index: number) {
+    this.step = index;
+  }
 
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
 }

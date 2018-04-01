@@ -11,7 +11,22 @@ div {
   background-color: lightblue;
   /*border: 1px solid grey;*/
 }
+#adduser {
+  background: url("../../resources/images/adduser.png") no-repeat center 0;
+  height: 60px;
+  width: 60px;
+  background-size: 60px 60px;
+  margin-right: 1%;
 
+
+}
+#edituser {
+  background: url("../../resources/images/edituser.png") no-repeat center 0;
+  height: 60px;
+  width: 60px;
+  background-size: 60px 60px;
+  margin-right: 1%;
+}
 .example-fill-remaining-space {
   /* This fills the remaining space, by using flexbox.
      Every toolbar row uses a flexbox row layout. */

@@ -10,7 +10,8 @@
 }
 
 #left-menu {
-  margin: 30px;
+  /*margin: 30px;*/
+
 }
 
 .lefttab {
@@ -18,20 +19,24 @@
 }
 
 .expansion {
-  font-size: 0.88em;
+  font-size: 0.8em;
 }
 
 .center-container, .side-menu-wrap {
   /*height: 100%;*/
   min-height: calc(100vh - 140px);
-  min-width: 15%;
-  max-width: 15%;
+  min-width: 16%;
+  max-width: 16%;
   float: left;
   background-color: #E0F8F7;
   /*border: 1px solid grey;*/
   border-top: 0;
+  margin-right: 15px;
+  /*margin-top: 2%*/
 }
-
+.mat-card {
+  min-height: calc(100vh - 140px);
+}
 #productbutton {
   width: 100%;
 }

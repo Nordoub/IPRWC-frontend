@@ -1,4 +1,5 @@
 <div id="left-menu" class="side-menu-wrap">
+
   <!--<nav id="main-menu" class="left-menu">-->
     <!--<ul>-->
       <!--<li class="list"><button mat-raised-button class="listbutton" routerLink="/">Producten</button></li>-->
@@ -7,7 +8,8 @@
       <!--<li class="list"><button mat-raised-button class="listbutton" routerLink="/">Voorwaarden</button></li>-->
     <!--</ul>-->
   <!--</nav>-->
-  <mat-expansion-panel routerLink="/" class="lefttab" hideToggle="true">
+  <mat-card>
+  <mat-expansion-panel routerLink="/" class="lefttab" [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Producten
@@ -17,7 +19,7 @@
 
   </mat-expansion-panel>
 
-  <mat-expansion-panel class="lefttab">
+  <mat-expansion-panel class="lefttab" [expanded]="step === 1" (opened)="setStep(1)">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Contact
@@ -39,7 +41,7 @@
 </div>
   </mat-expansion-panel>
 
-  <mat-expansion-panel class="lefttab">
+  <mat-expansion-panel class="lefttab" [expanded]="step === 2" (opened)="setStep(2)">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Voorwaarden
@@ -52,4 +54,5 @@
     </p>
 </div>
   </mat-expansion-panel>
+  </mat-card>
 </div>
