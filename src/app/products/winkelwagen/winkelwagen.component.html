@@ -34,7 +34,8 @@
   </mat-list>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onNoClick()">Annuleren</button>
+  <button mat-button (click)="notification()" cdkFocusInitial>Bestellen</button>
+  <button mat-button (click)="clearCart()">Verwijder alles</button>
 </div>
 

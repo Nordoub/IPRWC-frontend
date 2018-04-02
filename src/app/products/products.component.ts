@@ -39,7 +39,6 @@ export class ProductsComponent implements OnInit {
     this.snackBar.openFromComponent(MessageComponent, {
       duration: 1000,
     });
-    console.log(product.omschrijving)
 
   }
   // addItem(product:Product){

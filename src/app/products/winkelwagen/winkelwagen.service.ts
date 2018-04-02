@@ -43,6 +43,9 @@ export class WinkelwagenService {
   }
 
   removeItem(product: Product){
-
+  }
+  clearCart() {
+    this.products = [];
+    this.total.next(0)
   }
 }

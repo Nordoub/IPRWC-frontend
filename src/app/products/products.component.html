@@ -22,6 +22,7 @@
             </mat-card-header>
             <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
             <mat-card-actions>
+              € {{product.prijs}}
               <button mat-button (click)="notification(product)" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
             </mat-card-actions>
           </mat-card>
@@ -40,7 +41,8 @@
           </mat-card-header>
           <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
           <mat-card-actions>
-            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+            € {{product.prijs}}
+            <button mat-button (click)="notification(product)" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
           </mat-card-actions>
         </mat-card>
       </ng-container>
@@ -56,7 +58,8 @@
           </mat-card-header>
           <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
           <mat-card-actions>
-            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+            € {{product.prijs}}
+            <button mat-button (click)="notification(product)" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
           </mat-card-actions>
         </mat-card>
       </ng-container>
@@ -72,7 +75,8 @@
           </mat-card-header>
           <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
           <mat-card-actions>
-            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+            € {{product.prijs}}
+            <button mat-button (click)="notification(product)" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
           </mat-card-actions>
         </mat-card>
       </ng-container>
@@ -88,7 +92,8 @@
           </mat-card-header>
           <img mat-card-image src="{{product.imgURL}}"  height = "200" width="250">
           <mat-card-actions>
-            <button mat-button (click)="notification()" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
+            € {{product.prijs}}
+            <button mat-button (click)="notification(product)" class="toevoegen"><i class="material-icons">add_shopping_cart</i></button>
           </mat-card-actions>
         </mat-card>
       </ng-container>

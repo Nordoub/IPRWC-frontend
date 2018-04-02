@@ -5,27 +5,46 @@
     <h1>Register</h1>
   </div>
   <div class="input">
-    <input placeholder="Gebruikersnaam" type="text" required
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="Gebruikersnaam" type="text" required
            [(ngModel)]="user.username" name="username">
+    </mat-form-field>
   </div>
   <div class="input">
-    <input placeholder="Wachtwoord" type="text"  required [(ngModel)]="user.password" name="password">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Wachtwoord" type="text"  required [(ngModel)]="user.password" name="password">
+    </mat-form-field>
   </div>
   <div class="input">
-    <input placeholder="Voornaam" type="text"  required [(ngModel)]="user.firstname" name="firstname">
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="Voornaam" type="text"  required [(ngModel)]="user.firstname" name="firstname">
+    </mat-form-field>
   </div>
   <div class="input">
-    <input placeholder="Tussenvoegsel" type="text"  required [(ngModel)]="user.preposition" name="preposition">
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="Tussenvoegsel" type="text"  required [(ngModel)]="user.preposition" name="preposition">
+    </mat-form-field>
   </div>
   <div class="input">
-    <input placeholder="Achternaam" type="text"  required [(ngModel)]="user.lastname" name="lastname">
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="Achternaam" type="text"  required [(ngModel)]="user.lastname" name="lastname">
+    </mat-form-field>
   </div>
   <div class="input">
-    <input placeholder="Email" type="text"  required [(ngModel)]="user.email" name="email">
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" type="text"  required [(ngModel)]="user.email" name="email">
+    </mat-form-field>
   </div>
-  <div class="input">
-    <input placeholder="Rol" type="text"  required [(ngModel)]="user.role" name="Role">
-  </div>
+
+  <!--<div class="input">-->
+    <!--<input placeholder="Rol" type="text"  required [(ngModel)]="user.role" name="Role">-->
+  <!--</div>-->
+  <mat-slide-toggle
+    [color]="color"
+    [checked]="admin('admin')"
+    [disabled]="admin('guest')">
+    Admin
+  </mat-slide-toggle>
   <div class="input">
     <input type="submit" class="inputbutton link" [disabled]="!loginForm.valid">
   </div>

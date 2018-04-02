@@ -57,7 +57,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
-import { WinkelwagenComponent } from './products/winkelwagen/winkelwagen.component';
+import {BestellingmessageComponent, WinkelwagenComponent} from './products/winkelwagen/winkelwagen.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
 import { EdituserComponent } from './user/edituser/edituser.component';
 import {WinkelwagenService} from './products/winkelwagen/winkelwagen.service';
@@ -76,7 +76,8 @@ import {WinkelwagenService} from './products/winkelwagen/winkelwagen.service';
     MessageComponent,
     WinkelwagenComponent,
     AdduserComponent,
-    EdituserComponent
+    EdituserComponent,
+    BestellingmessageComponent
   ],
   imports: [
     BrowserModule,
@@ -120,7 +121,7 @@ import {WinkelwagenService} from './products/winkelwagen/winkelwagen.service';
     ProductService,
     WinkelwagenService
   ],
-  entryComponents: [MessageComponent, WinkelwagenComponent, AdduserComponent, EdituserComponent],
+  entryComponents: [MessageComponent, WinkelwagenComponent, AdduserComponent, EdituserComponent, BestellingmessageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
