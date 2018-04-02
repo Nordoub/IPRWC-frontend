@@ -1,12 +1,40 @@
 
-<h1 mat-dialog-title> Uw winkelwagen</h1>
+<!--<h1 mat-dialog-title> Uw winkelwagen</h1>-->
+<!--<div mat-dialog-content>-->
+  <!--&lt;!&ndash;<p>Wilt u bestellen?</p>&ndash;&gt;-->
+  <!--&lt;!&ndash;<h1>{{total$ | async }}</h1>&ndash;&gt;-->
+  <!--<button (click)="addItem()">Add Item</button>-->
+  <!--<p *ngFor="let product of products">naam: {{product.omschrijving}} prijs: {{product.prijs}}</p>-->
+  <!--<p>totaal: {{total$ | async }}</p>-->
+<!--</div>-->
+<!--<div mat-dialog-actions>-->
+  <!--<button mat-button (click)="onNoClick()">No Thanks</button>-->
+  <!--<button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>-->
+<!--</div>-->
+
+
+<!--<h1 mat-dialog-title> Uw winkelwagen</h1>-->
 <div mat-dialog-content>
-  <!--<p>Wilt u bestellen?</p>-->
-  <h1>{{total$ | async }}</h1>
-  <button (click)="addItem()">Add Item</button>
-  <p *ngFor="let product of products">{{product.omschrijving}}</p>
+  <h1>Winkelwagen</h1>
+
+  <!--<h1>{{total$ | async }}</h1>-->
+  <!--<button (click)="addItem()">Add Item</button>-->
+  <mat-list>
+    <h3 mat-subheader>Producten</h3>
+    <mat-list-item *ngFor="let product of products">
+      <mat-icon mat-list-icon>-</mat-icon>
+      <h4 mat-line>{{product.omschrijving}}</h4>
+      <p mat-line> {{product.prijs}} </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Totaal</h3>
+    <mat-list-item>
+      {{total$ | async }}
+    </mat-list-item>
+  </mat-list>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
 </div>
+

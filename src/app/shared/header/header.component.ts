@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   }
   openDialog(): void {
     let dialogRef = this.dialog.open(WinkelwagenComponent, {
-      width: '250px',
+      width: '500px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

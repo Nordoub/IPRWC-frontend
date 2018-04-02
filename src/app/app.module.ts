@@ -100,6 +100,7 @@ import {WinkelwagenService} from './products/winkelwagen/winkelwagen.service';
     Ng2SmartTableModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatListModule
 
     //MatSlideToggleModule,
 
