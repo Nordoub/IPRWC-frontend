@@ -3,6 +3,9 @@ import {ProductService} from '../products/product.service';
 import {Product} from '../products/product';
 import {Observable} from 'rxjs/Observable';
 import {User} from '../user/user';
+import {AdduserComponent} from '../user/adduser/adduser.component';
+import {EdituserComponent} from '../user/edituser/edituser.component';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-admin',
@@ -17,17 +20,17 @@ export class AdminComponent implements OnInit {
   // user:User = new User();
   selectedProduct: Product = new Product();
   product: Product = new Product();
-  flairs = [
-    {value: 'steak-0', viewValue: 'Manager'},
-    {value: 'pizza-1', viewValue: 'Schoonmaker'},
-    {value: 'tacos-2', viewValue: 'Software developer'}
-  ];
-
-  users = [
-    {value: 'Naam1', viewValue: 'Naam1'},
-    {value: 'Naam2', viewValue: 'Naam2'},
-    {value: 'Naam3', viewValue: 'Naam3'}
-  ];
+  // flairs = [
+  //   {value: 'steak-0', viewValue: 'Manager'},
+  //   {value: 'pizza-1', viewValue: 'Schoonmaker'},
+  //   {value: 'tacos-2', viewValue: 'Software developer'}
+  // ];
+  //
+  // users = [
+  //   {value: 'Naam1', viewValue: 'Naam1'},
+  //   {value: 'Naam2', viewValue: 'Naam2'},
+  //   {value: 'Naam3', viewValue: 'Naam3'}
+  // ];
 
   settings = {
     //actions: false,
@@ -71,16 +74,14 @@ export class AdminComponent implements OnInit {
       }
     }
   };
-  constructor(private productService:ProductService) {
-    this.allProducts = this.productService.getAllProducts();
+  constructor(private productService:ProductService, public dialog:MatDialog) {
+    // this.allProducts = this.productService.getAllProducts();
   }
 
   ngOnInit() {
-    this.allProducts = this.productService.getAllProducts();
+    this.getAllProducts()
   }
-  test () {
-    console.log(this.allProducts)
-  }
+
   setStep(index: number) {
     this.step = index;
   }
@@ -94,6 +95,64 @@ export class AdminComponent implements OnInit {
   }
   onSelect(event): void {
     this.selectedProduct = event.data;
+  }
+
+  productToevoegen(event) {
+    this.product = event.newData;
+    if (window.confirm(('Weet je zeker dat je dit product wilt toevoegen?'))) {
+      event.confirm.resolve();
+      if(this.productService.addProduct(this.product)) {this.getAllProducts()}
+    } else {
+      event.confirm.reject();
+      window.alert('Product is niet toegevoegd.')
+    }
+  }
+
+  editProduct(event){
+    //this.productService.editProduct(this.selectedProduct);
+    if (window.confirm(('Weet je zeker dat je dit product wilt aanpassen?'))) {
+      event.confirm.resolve();
+      this.product = event.newData;
+      this.productService.editProduct(this.product);
+    } else {
+      event.confirm.reject();
+      window.alert('Product is niet aangepast.')
+    }
+  }
+
+  productVerwijderen(event) {
+    //this.productService.deleteProduct(this.selectedProduct)
+    if (window.confirm(('Weet je zeker dat je dit product wilt deleten?'))) {
+      event.confirm.resolve();
+      this.product = event.data;
+      this.productService.deleteProduct(this.product)
+    } else {
+      event.confirm.reject()
+      window.alert('Product is niet verwijderd.');
+    }
+
+  }
+  getAllProducts()    {
+    this.allProducts = this.productService.getAllProducts();
+  }
+
+  openAddUser(): void {
+    let dialogRef = this.dialog.open(AdduserComponent, {
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  openEditUser(): void {
+    let dialogRef = this.dialog.open(EdituserComponent, {
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
 

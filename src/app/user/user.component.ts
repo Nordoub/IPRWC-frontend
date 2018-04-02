@@ -28,3 +28,9 @@ export class UserComponent implements OnInit {
     this.allUsers = this.userService.getAll();
   }
 }
+@Component({
+  selector: 'app-message',
+  template: '<p>Product is aan uw winkelwagen toegevoegd.</p>',
+  styles: [`.example-pizza-party { color: hotpink; }`],
+})
+export class MessageComponent {}

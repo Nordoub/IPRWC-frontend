@@ -23,4 +23,56 @@ export class ProductService {
   public getAllProducts(): Observable<Product[]> {
     return this.api.get<Product[]>('products')
   }
+  public addProduct(product: Product): void {
+    let data = {
+      omschrijving: product.omschrijving,
+      fabrikant: product.fabrikant,
+      gecheckt: product.gecheckt,
+      prijs: product.prijs,
+      product_gebruiker_id: product.product_gebruiker_id,
+      imgURL: product.imgURL,
+      categorie: product.categorie,
+    };
+
+    this.api.post('/products', data)
+      .subscribe(
+
+        data => {
+          alert('Het toevoegen is gelukt');
+        },
+        error =>{
+          alert('Het toevoegen is niet gelukt');
+        }
+      )
+  }
+  public deleteProduct(product:Product) {
+    this.api.delete<void>('products/delete', {description: product.omschrijving, manufacturer: product.fabrikant})
+      .subscribe(
+        (response) => alert('Product successfully deleted.'),
+        (error) => alert('Product is niet verwijderd')
+      );
+  }
+
+  public editProduct(product: Product): void {
+    let data = {
+      id: product.id,
+      omschrijving: product.omschrijving,
+      fabrikant: product.fabrikant,
+      gecheckt: product.gecheckt,
+      prijs: product.prijs,
+      product_gebruiker_id: product.product_gebruiker_id,
+      imgURL: product.imgURL,
+      categorie: product.categorie,
+    };
+
+    this.api.put<void>('products/edit', data).subscribe
+    (
+      data => {
+        alert('Het aanpassen is gelukt');
+      },
+      error =>{
+        alert('Het aanpassenis niet gelukt');
+      }
+    );
+  }
 }

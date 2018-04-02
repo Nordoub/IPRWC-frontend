@@ -1,6 +1,6 @@
-<div class="banner">
-  HEADER
-</div>
+<!--<div class="banner">-->
+  <!--HEADER-->
+<!--</div>-->
 <mat-toolbar color="primary">
   <span>IT-webshop</span>
 
@@ -26,6 +26,9 @@
 
   <button mat-icon-button [matMenuTriggerFor]="userMenu">
     <mat-icon><i class="material-icons md-48">account_circle</i>gebruiker</mat-icon>
+  </button>
+  <button mat-icon-button (click)="openDialog()" id="winkelwagen">
+    <mat-icon><i class="material-icons md-48">add_shopping_cart</i></mat-icon>
   </button>
   </mat-toolbar>
 

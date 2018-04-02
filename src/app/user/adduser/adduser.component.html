@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
+
+
+  <div class="loginlabel">
+    <h1>Register</h1>
+  </div>
+  <div class="input">
+    <input placeholder="Gebruikersnaam" type="text" required
+           [(ngModel)]="user.username" name="username">
+  </div>
+  <div class="input">
+    <input placeholder="Wachtwoord" type="text"  required [(ngModel)]="user.password" name="password">
+  </div>
+  <div class="input">
+    <input placeholder="Voornaam" type="text"  required [(ngModel)]="user.firstname" name="firstname">
+  </div>
+  <div class="input">
+    <input placeholder="Tussenvoegsel" type="text"  required [(ngModel)]="user.preposition" name="preposition">
+  </div>
+  <div class="input">
+    <input placeholder="Achternaam" type="text"  required [(ngModel)]="user.lastname" name="lastname">
+  </div>
+  <div class="input">
+    <input placeholder="Email" type="text"  required [(ngModel)]="user.email" name="email">
+  </div>
+  <div class="input">
+    <input placeholder="Rol" type="text"  required [(ngModel)]="user.role" name="Role">
+  </div>
+  <div class="input">
+    <input type="submit" class="inputbutton link" [disabled]="!loginForm.valid">
+  </div>
+
+</form>

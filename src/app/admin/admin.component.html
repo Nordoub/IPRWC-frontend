@@ -3,8 +3,9 @@
   <!--<div id="table-wrapper">-->
     <!--<div id="table-scroll">-->
   <div id="knoppen">
-  <button id="adduser"></button>
-  <button id="edituser"></button>
+  <button id="adduser" (click)="openAddUser()"></button>
+  <button id="edituser" (click)="openEditUser()"></button>
+
   </div>
 <mat-tab-group>
 <mat-tab>
@@ -17,8 +18,8 @@
                     (createConfirm)="productToevoegen($event)"
                     (editConfirm)="editProduct($event)"
                     (deleteConfirm)="productVerwijderen($event)"
-                    (custom)="approveProduct($event)"
                     (edit)="onRowEdit($event)">
+    <!--(custom)="approveProduct($event)"-->
   </ng2-smart-table>
 
 </mat-tab>

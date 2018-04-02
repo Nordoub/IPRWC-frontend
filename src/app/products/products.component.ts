@@ -5,6 +5,7 @@ import {UserService} from '../user/user.service';
 import {ProductService} from './product.service';
 import {User} from '../user/user';
 import {MatSnackBar} from '@angular/material';
+import {WinkelwagenService} from './winkelwagen/winkelwagen.service';
 
 @Component({
   selector: 'app-products',
@@ -21,9 +22,11 @@ export class ProductsComponent implements OnInit {
   // public imgURL?: string)
   public allProducts: Observable<Product[]>;
   user = new User(1, 'root','root','norddin','-','oubahman','test@hotmail.com','admin');
-
-  constructor(private userService:UserService, private productService:ProductService, public snackBar: MatSnackBar) {
+  total$: Observable<number>;
+  constructor(private userService:UserService, private productService:ProductService, public snackBar: MatSnackBar,
+              private winkelwagenService:WinkelwagenService) {
     this.allProducts = this.productService.getAllProducts();
+    this.total$ = winkelwagenService.total$
   }
 
   ngOnInit() {
@@ -31,12 +34,17 @@ export class ProductsComponent implements OnInit {
     console.log(this.allProducts)
     // console.log(this.userService.IsUserLoggedIn)
   }
-  notification() {
+  notification(product:Product) {
+    this.winkelwagenService.addItem(product);
     this.snackBar.openFromComponent(MessageComponent, {
       duration: 1000,
     });
-  }
+    console.log(product.omschrijving)
 
+  }
+  // addItem(product:Product){
+  //   this.winkelwagenService.addItem(product);
+  // }
 }
 @Component({
   selector: 'app-message',

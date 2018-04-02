@@ -1,0 +1,12 @@
+
+<h1 mat-dialog-title> Uw winkelwagen</h1>
+<div mat-dialog-content>
+  <!--<p>Wilt u bestellen?</p>-->
+  <h1>{{total$ | async }}</h1>
+  <button (click)="addItem()">Add Item</button>
+  <p *ngFor="let product of products">{{product.omschrijving}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Ok</button>
+</div>

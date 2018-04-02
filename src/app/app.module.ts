@@ -25,7 +25,7 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatChipsModule,
-  MatDatepickerModule,
+  MatDatepickerModule, MatDialog,
   MatDialogModule,
   MatExpansionModule,
   MatGridListModule,
@@ -57,6 +57,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
 import {Ng2SmartTableModule} from 'ng2-smart-table';
+import { WinkelwagenComponent } from './products/winkelwagen/winkelwagen.component';
+import { AdduserComponent } from './user/adduser/adduser.component';
+import { EdituserComponent } from './user/edituser/edituser.component';
+import {WinkelwagenService} from './products/winkelwagen/winkelwagen.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,10 @@ import {Ng2SmartTableModule} from 'ng2-smart-table';
     UserComponent,
     AdminComponent,
     BestellingComponent,
-    MessageComponent
+    MessageComponent,
+    WinkelwagenComponent,
+    AdduserComponent,
+    EdituserComponent
   ],
   imports: [
     BrowserModule,
@@ -92,6 +99,7 @@ import {Ng2SmartTableModule} from 'ng2-smart-table';
     MatInputModule,
     Ng2SmartTableModule,
     MatSnackBarModule,
+    MatDialogModule,
 
     //MatSlideToggleModule,
 
@@ -108,9 +116,10 @@ import {Ng2SmartTableModule} from 'ng2-smart-table';
     AuthAdminGuard,
     AppRoutingModule,
     LoginComponent,
-    ProductService
+    ProductService,
+    WinkelwagenService
   ],
-  entryComponents: [MessageComponent],
+  entryComponents: [MessageComponent, WinkelwagenComponent, AdduserComponent, EdituserComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
