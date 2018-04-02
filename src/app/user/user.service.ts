@@ -63,6 +63,7 @@ export class UserService {
     storage.setItem('firstName', user.firstname);
     storage.setItem('role', user.role);
     storage.setItem('userName', user.username);
+    storage.setItem('id', String(user.id));
     this.changeName(sessionStorage.getItem('firstName'))
     this.changeRole(sessionStorage.getItem('role'))
 
@@ -88,6 +89,51 @@ export class UserService {
       },
       error =>{
         alert('Het aanmaken is niet gelukt');
+      }
+    )
+  }
+  public registerFromLoginPage(user: User): void
+  {
+    let data =
+      {
+        username: user.username,
+        password: user.password,
+        firstname: user.firstname,
+        preposition: user.preposition,
+        lastname: user.lastname,
+        email: user.email,
+        role: user.role
+      };
+    this.api.post<void>('users/register', data).subscribe
+    (
+      response => {
+        alert('Het aanmaken is gelukt');
+      },
+      error =>{
+        alert('Het aanmaken is niet gelukt');
+      }
+    )
+  }
+  public updateUser(user: User): void
+  {
+    let data =
+      {
+        username: user.username,
+        password: user.password,
+        firstname: user.firstname,
+        preposition: user.preposition,
+        lastname: user.lastname,
+        email: user.email,
+        role: user.role
+      };
+
+    this.api.post<void>('users/update', data).subscribe
+    (
+      data => {
+        alert('Het aanpassen is gelukt');
+      },
+      error =>{
+        alert('Het aanpassen is niet gelukt');
       }
     )
   }

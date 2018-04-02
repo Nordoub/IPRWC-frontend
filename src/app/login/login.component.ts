@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {User} from '../user/user';
 import {UserService} from '../user/user.service';
+import {MatDialog} from '@angular/material';
+import {AdduserComponent} from '../user/adduser/adduser.component';
 
 
 
@@ -16,7 +18,7 @@ export class LoginComponent implements OnInit {
   remember;
   name:string;
   role:string;
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private router: Router, public dialog:MatDialog) {
   }
 
   ngOnInit() {
@@ -35,5 +37,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.userService.login(this.user, this.remember);
   }
+  openAddUser(): void {
+    let dialogRef = this.dialog.open(AdduserComponent, {
+      width: '500px',
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 }

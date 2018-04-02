@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {User} from '../user';
 import {UserService} from '../user.service';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-adduser',
@@ -10,25 +11,38 @@ import {UserService} from '../user.service';
 export class AdduserComponent implements OnInit {
 
   user:User = new User();
-
-  constructor(private userService:UserService) {}
-
+  checked = false;
+  role:string;
+  constructor(private userService:UserService, public dialogRef: MatDialogRef<AdduserComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any) {}
+  selected = 'guest';
   ngOnInit() {
     this.user.role = 'guest';
+    if (sessionStorage.getItem('admin') == null) {
+      this.userService.currentRole.subscribe(role => this.role = role)
+    } else {
+      this.userService.changeRole(sessionStorage.getItem('role'))
+      this.userService.currentRole.subscribe(role => this.role = role)
+    }
   }
   onSubmit() {
-    // this.userService.register(this.user)
-    console.log(this.user.username)
-    console.log(this.user.password)
-    console.log(this.user.firstname)
-    console.log(this.user.preposition)
-    console.log(this.user.lastname)
-    console.log(this.user.email)
-    console.log(this.user.role)
+    // je gebruikt in dit geval de methode waarmee je kan zeggen of iemand admin is of niet.
+    if(this.user.username!=null) {
+      if (this.role == 'admin') {
+        this.userService.register(this.user)
+      }
+      else
+      // Als je geen admin bent dan gebruik je de methode waarin je niet kan aangeven of iemand admin of guest is. De rol
+      // is in dit geval altijd guest. Om te kunnen registreren via de loginpage moet een get methode public zijn. Door de
+      // role bij dit route altijd op guest te zetten in de api wordt de beveiliging verbeterd.
+      {
+        this.userService.registerFromLoginPage(this.user)
+      }
+    }
+    this.onNoClick()
   }
-  admin(admin:string) {
-    if (admin =='admin') {
-        this.user.role = 'admin';
-    } else {this.user.role = 'guest'};
+  onNoClick(): void {
+
+    this.dialogRef.close();
   }
 }

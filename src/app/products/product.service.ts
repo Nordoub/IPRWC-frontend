@@ -1,6 +1,7 @@
 /**
  * Created by School on 10-3-2018.
  */
+
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
@@ -27,15 +28,16 @@ export class ProductService {
     let data = {
       omschrijving: product.omschrijving,
       fabrikant: product.fabrikant,
-      gecheckt: product.gecheckt,
+      gecheckt: '1',
       prijs: product.prijs,
-      product_gebruiker_id: product.product_gebruiker_id,
+      product_gebruiker_id: parseInt(sessionStorage.getItem('id')),
       imgURL: product.imgURL,
       categorie: product.categorie,
     };
 
     this.api.post('/products', data)
       .subscribe(
+
 
         data => {
           alert('Het toevoegen is gelukt');
@@ -46,7 +48,7 @@ export class ProductService {
       )
   }
   public deleteProduct(product:Product) {
-    this.api.delete<void>('products/delete', {description: product.omschrijving, manufacturer: product.fabrikant})
+    this.api.delete<void>('products/delete', {omschrijving: product.omschrijving, fabrikant: product.fabrikant})
       .subscribe(
         (response) => alert('Product successfully deleted.'),
         (error) => alert('Product is niet verwijderd')

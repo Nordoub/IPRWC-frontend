@@ -39,14 +39,23 @@
   <!--<div class="input">-->
     <!--<input placeholder="Rol" type="text"  required [(ngModel)]="user.role" name="Role">-->
   <!--</div>-->
-  <mat-slide-toggle
-    [color]="color"
-    [checked]="admin('admin')"
-    [disabled]="admin('guest')">
-    Admin
-  </mat-slide-toggle>
-  <div class="input">
-    <input type="submit" class="inputbutton link" [disabled]="!loginForm.valid">
-  </div>
+  <!--<mat-slide-toggle-->
+    <!--[color]="color"-->
+    <!--[checked]="checked"-->
+    <!--[disabled]="disabled" [(ngModel)]="checked">-->
 
+    <!--Admin-->
+  <!--</mat-slide-toggle>-->
+  <mat-form-field *ngIf="role=='admin'">
+    <mat-select [(value)]="user.role">
+      <mat-option value="guest">Guest</mat-option>
+      <mat-option value="admin">Admin</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="input">
+      <button mat-raised-button input type="submit">Registeren</button>
+    <button mat-raised-button (click)="onNoClick()">Annuleren</button>
+    <!--<button mat-raised-button>Basic</button>-->
+    <!--<input type="submit" class="inputbutton link" [disabled]="!loginForm.valid">-->
+  </div>
 </form>

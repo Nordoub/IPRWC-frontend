@@ -16,6 +16,7 @@ export class AdminComponent implements OnInit {
 
   public allProducts: Observable<Product[]>;
   step = 0;
+  id:string;
   panelOpenState: boolean = false;
   // user:User = new User();
   selectedProduct: Product = new Product();
@@ -99,14 +100,24 @@ export class AdminComponent implements OnInit {
 
   productToevoegen(event) {
     this.product = event.newData;
+    // console.log(this.product.id)
+    // console.log(this.product.omschrijving)
+    // console.log(this.product.product_gebruiker_id)
+    // console.log(this.product.categorie)
+    // console.log(this.product.fabrikant)
+    // console.log(this.product.gecheckt)
+    // console.log(this.product.imgURL)
+    // console.log(this.product.prijs)
+    // console.log(this.id)
+
     if (window.confirm(('Weet je zeker dat je dit product wilt toevoegen?'))) {
       event.confirm.resolve();
-      if(this.productService.addProduct(this.product)) {this.getAllProducts()}
+      this.productService.addProduct(this.product)
     } else {
       event.confirm.reject();
       window.alert('Product is niet toegevoegd.')
     }
-  }
+   }
 
   editProduct(event){
     //this.productService.editProduct(this.selectedProduct);

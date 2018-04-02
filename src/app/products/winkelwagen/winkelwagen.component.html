@@ -24,13 +24,13 @@
     <mat-list-item *ngFor="let product of products">
       <mat-icon mat-list-icon>-</mat-icon>
       <h4 mat-line>{{product.omschrijving}}</h4>
-      <p mat-line> {{product.prijs}} </p>
+      <h5 mat-line> €{{product.prijs}} </h5>
     </mat-list-item>
     <mat-divider></mat-divider>
-    <h3 mat-subheader>Totaal</h3>
-    <mat-list-item>
-      {{total$ | async }}
-    </mat-list-item>
+    <h3 mat-subheader>Totaal: €{{total$ | async }} </h3>
+    <!--<mat-list-item>-->
+      <!--{{total$ | async }}-->
+    <!--</mat-list-item>-->
   </mat-list>
 </div>
 <div mat-dialog-actions>

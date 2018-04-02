@@ -1,3 +1,55 @@
-<p>
-  edituser works!
-</p>
+<mat-form-field>
+  <mat-select  placeholder="Kies een gebruiker" [(ngModel)]="user" name="user">
+    <mat-option *ngFor="let user of allUsers | async" [value]="user">{{user.username}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
+
+
+  <div class="loginlabel">
+    <h1>Register</h1>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Gebruikersnaam" type="text" required
+             [(ngModel)]="user.username" name="username" value="user.username">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Wachtwoord" type="password"  required [(ngModel)]="user.password" name="password" value="user.password">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Voornaam" type="text"  required [(ngModel)]="user.firstname" name="firstname" value="user.firstname">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Tussenvoegsel" type="text"  required [(ngModel)]="user.preposition" name="preposition" value="user.preposition">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Achternaam" type="text"  required [(ngModel)]="user.lastname" name="lastname" value="user.lastname">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" type="text"  required [(ngModel)]="user.email" name="email" value="user.email">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field>
+    <mat-select [(value)]="user.role">
+      <mat-option value="guest">Guest</mat-option>
+      <mat-option value="admin">Admin</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="input">
+    <button mat-raised-button input type="submit">Registeren</button>
+    <button mat-raised-button (click)="onNoClick()">Annuleren</button>
+
+  </div>
+</form>

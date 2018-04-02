@@ -26,4 +26,11 @@ div.input input {
 
 div.input {
   margin-top: 20px;
+  width: 257px;
+}
+
+#registreren {
+  float: right;
+  margin-top: 228px;
+  /*margin-left: -7.5%;*/
 }

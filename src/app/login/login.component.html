@@ -11,13 +11,15 @@
   <div class="input">
     <input placeholder="Wachtwoord" type="password"  required [(ngModel)]="user.password" name="password">
   </div>
-  <div>
-    <label>Onthoud mij: </label>
-    <input type="checkbox" name="remember" [(ngModel)]="remember">
+  <!--<div>-->
+    <!--<label>Onthoud mij: </label>-->
+    <!--<input type="checkbox" name="remember" [(ngModel)]="remember">-->
 
-  </div>
+  <!--</div>-->
   <div class="input">
-    <input type="submit" class="inputbutton link" [disabled]="!loginForm.valid">
+    <!--<input type="submit" class="inputbutton link" [disabled]="!loginForm.valid">-->
+    <button mat-raised-button input type="submit">Inloggen</button>
   </div>
 
 </form>
+<button mat-raised-button id="registreren" (click)="openAddUser()">Registeren</button>
