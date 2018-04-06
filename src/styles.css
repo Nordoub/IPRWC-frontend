@@ -22,6 +22,10 @@ p, h1, li, a {
   font-family: "Verdana";
 }
 
+#close {
+  float: right;
+}
+
 /*.center-container {*/
 /*width: 100%;*/
 /*height: 100%;*/

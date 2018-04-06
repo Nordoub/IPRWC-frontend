@@ -13,25 +13,20 @@ import {WinkelwagenService} from './winkelwagen/winkelwagen.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  // public id?: number,
-  // public omschrijving?: string,
-  // public fabrikant?: string,
-  // public gecheckt?: string,
-  // public prijs?: string,
-  // public product_gebruiker_id?: string,
-  // public imgURL?: string)
-  public allProducts: Observable<Product[]>;
-  user = new User(1, 'root','root','norddin','-','oubahman','test@hotmail.com','admin');
+
+  // public allProducts: Observable<Product[]>;
+  allProducts: Product[];
   total$: Observable<number>;
   constructor(private userService:UserService, private productService:ProductService, public snackBar: MatSnackBar,
               private winkelwagenService:WinkelwagenService) {
-    this.allProducts = this.productService.getAllProducts();
+    this.productService.getAllProducts().subscribe(data => this.allProducts = data);
+
+
     this.total$ = winkelwagenService.total$
   }
 
   ngOnInit() {
-    this.allProducts = this.productService.getAllProducts();
-    console.log(this.allProducts)
+    // this.allProducts = this.productService.getAllProducts();
     // console.log(this.userService.IsUserLoggedIn)
   }
   notification(product:Product) {
@@ -41,9 +36,7 @@ export class ProductsComponent implements OnInit {
     });
 
   }
-  // addItem(product:Product){
-  //   this.winkelwagenService.addItem(product);
-  // }
+
 }
 @Component({
   selector: 'app-message',

@@ -142,6 +142,10 @@ export class UserService {
     return this.api.get<User[]>('users')
   }
 
+  public getMe(){
+    return this.api.get<User>('users/'+ this.authService.getUserName());
+  }
+
   private goHome()
   {
     this.router.navigate(['/']);

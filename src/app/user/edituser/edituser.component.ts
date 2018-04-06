@@ -16,7 +16,7 @@ export class EdituserComponent implements OnInit {
   selected = 'guest';
   public allUsers: Observable<User[]>;
   // selectedUser:User = new User;
-
+  tempPassword:string
   constructor(private userService:UserService, public dialogRef: MatDialogRef<EdituserComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any)
   {
@@ -24,13 +24,24 @@ export class EdituserComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.user.role = 'guest';
+    if (sessionStorage.getItem('admin') == null) {
+      this.userService.currentRole.subscribe(role => this.role = role)
+    } else {
+      this.userService.changeRole(sessionStorage.getItem('role'))
+      this.userService.currentRole.subscribe(role => this.role = role)
+    }
   }
   getUsers() {
     this.allUsers = this.userService.getAll();
   }
   onSubmit() {
-    if(this.user.username!=null) {this.userService.updateUser(this.user)}
+    if(this.user.username!=null)
+    {
+      console.log(this.tempPassword)
+      this.user.password = this.tempPassword;
+      console.log(this.user.password)
+      this.userService.updateUser(this.user)
+    }
     this.onNoClick()
   }
   onNoClick(): void {

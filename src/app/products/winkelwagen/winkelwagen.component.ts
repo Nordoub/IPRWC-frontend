@@ -12,7 +12,7 @@ import {Product} from '../product';
 })
 export class WinkelwagenComponent implements OnInit {
 
-  private products: Product[] = [];
+  public products: Product[] = [];
   total$: Observable<number>;
   constructor(
     public dialogRef: MatDialogRef<WinkelwagenComponent>,
@@ -23,6 +23,7 @@ export class WinkelwagenComponent implements OnInit {
   }
 
   notification() {
+
     this.snackBar.openFromComponent(BestellingmessageComponent, {
       duration: 1000,
     });
@@ -35,7 +36,6 @@ export class WinkelwagenComponent implements OnInit {
     this.winkelwagenService.clearCart();
     this.products = [];
   }
-
   ngOnInit() {
   }
 

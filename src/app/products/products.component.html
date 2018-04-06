@@ -15,7 +15,7 @@
         <!--<mat-grid-tile id="test">-->
         <!--{{product.omschrijving}}-->
           <!--</mat-grid-tile>-->
-        <ng-container *ngFor="let product of allProducts | async">
+        <ng-container *ngFor="let product of allProducts">
           <mat-card  class="example-card"  *ngIf="product.categorie == 'videokaart'">
             <mat-card-header>
             <mat-card-title>{{product.omschrijving}}</mat-card-title>
@@ -34,7 +34,7 @@
       <ng-template mat-tab-label>
         Moederborden
       </ng-template>
-      <ng-container *ngFor="let product of allProducts | async">
+      <ng-container *ngFor="let product of allProducts">
         <mat-card  class="example-card"  *ngIf="product.categorie == 'moederbord'">
           <mat-card-header>
             <mat-card-title>{{product.omschrijving}}</mat-card-title>
@@ -51,7 +51,7 @@
       <ng-template mat-tab-label>
         Processors
       </ng-template>
-      <ng-container *ngFor="let product of allProducts | async">
+      <ng-container *ngFor="let product of allProducts">
         <mat-card  class="example-card"  *ngIf="product.categorie == 'processor'">
           <mat-card-header>
             <mat-card-title>{{product.omschrijving}}</mat-card-title>
@@ -68,7 +68,7 @@
       <ng-template mat-tab-label>
         Intern geheugen
       </ng-template>
-      <ng-container *ngFor="let product of allProducts | async">
+      <ng-container *ngFor="let product of allProducts">
         <mat-card  class="example-card"  *ngIf="product.categorie == 'intern geheugen'">
           <mat-card-header>
             <mat-card-title>{{product.omschrijving}}</mat-card-title>
@@ -85,7 +85,7 @@
       <ng-template mat-tab-label>
         Solid State Drives
       </ng-template>
-      <ng-container *ngFor="let product of allProducts | async">
+      <ng-container *ngFor="let product of allProducts">
         <mat-card  class="example-card"  *ngIf="product.categorie == 'ssd'">
           <mat-card-header>
             <mat-card-title>{{product.omschrijving}}</mat-card-title>

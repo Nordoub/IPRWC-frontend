@@ -9,6 +9,8 @@ import {Subject} from 'rxjs/Subject';
 import {ApiService} from '../shared/api.service';
 import {AuthorizationService} from '../shared/authorization.service';
 import {Product} from './product';
+import {User} from '../user/user';
+import {UserService} from '../user/user.service';
 
 
 @Injectable()
@@ -16,9 +18,9 @@ export class ProductService {
 
   // allUsers$: Observable<User>;
 
-
-  constructor(private api: ApiService, private authService: AuthorizationService, private router: Router) {
-
+  user:User;
+  constructor(private api: ApiService, private authService: AuthorizationService, private router: Router, private userService:UserService) {
+    this.userService.getMe().subscribe(user => this.user = user)
   }
 
   public getAllProducts(): Observable<Product[]> {
@@ -30,12 +32,12 @@ export class ProductService {
       fabrikant: product.fabrikant,
       gecheckt: '1',
       prijs: product.prijs,
-      product_gebruiker_id: parseInt(sessionStorage.getItem('id')),
+      product_gebruiker_id: this.user.id, /*parseInt(sessionStorage.getItem('id')),*/
       imgURL: product.imgURL,
       categorie: product.categorie,
     };
 
-    this.api.post('/products', data)
+    this.api.post('products', data)
       .subscribe(
 
 
@@ -57,12 +59,12 @@ export class ProductService {
 
   public editProduct(product: Product): void {
     let data = {
-      id: product.id,
+      //id: product.id,
       omschrijving: product.omschrijving,
       fabrikant: product.fabrikant,
-      gecheckt: product.gecheckt,
+      gecheckt: '1',
       prijs: product.prijs,
-      product_gebruiker_id: product.product_gebruiker_id,
+      product_gebruiker_id: this.user.id,
       imgURL: product.imgURL,
       categorie: product.categorie,
     };

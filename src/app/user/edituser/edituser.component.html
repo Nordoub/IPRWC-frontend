@@ -1,3 +1,8 @@
+
+<button mat-icon-button id="close" (click)="onNoClick()">
+  <mat-icon><i class="material-icons">close</i></mat-icon>
+</button>
+
 <mat-form-field>
   <mat-select  placeholder="Kies een gebruiker" [(ngModel)]="user" name="user">
     <mat-option *ngFor="let user of allUsers | async" [value]="user">{{user.username}}</mat-option>
@@ -7,17 +12,17 @@
 
 
   <div class="loginlabel">
-    <h1>Register</h1>
+    <h1>Update gebruiker</h1>
   </div>
   <div class="input">
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Gebruikersnaam" type="text" required
-             [(ngModel)]="user.username" name="username" value="user.username">
+             [(ngModel)]="user.username" name="username" disabled value="user.username">
     </mat-form-field>
   </div>
   <div class="input">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Wachtwoord" type="password"  required [(ngModel)]="user.password" name="password" value="user.password">
+      <input matInput placeholder="Wachtwoord" type="password"  required [(ngModel)]="tempPassword" name="password" value="tempPassword">
     </mat-form-field>
   </div>
   <div class="input">
@@ -41,15 +46,15 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field>
+  <mat-form-field *ngIf="role=='admin'">
     <mat-select [(value)]="user.role">
       <mat-option value="guest">Guest</mat-option>
       <mat-option value="admin">Admin</mat-option>
     </mat-select>
   </mat-form-field>
   <div class="input">
-    <button mat-raised-button input type="submit">Registeren</button>
-    <button mat-raised-button (click)="onNoClick()">Annuleren</button>
-
+    <button mat-raised-button input type="submit">Updaten</button>
+    <!--<button mat-raised-button (click)="onNoClick()">Annuleren</button>-->
   </div>
 </form>
+

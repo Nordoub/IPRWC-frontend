@@ -38,6 +38,7 @@ export class ApiService {
 
   private createURI(path: string, queryParameters: Object): string {
     let queryString = this.createQueryString(queryParameters);
+
     return `/api/${path}${queryString}`;
   }
 

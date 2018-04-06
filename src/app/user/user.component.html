@@ -1,13 +1,49 @@
-<p>
-  user works!
-</p>
-<!--<table>-->
-  <!--<thead>-->
-  <!--<th>Groups Name</th>-->
-  <!--</thead>-->
-  <!--<tbody>-->
-  <!--<tr *ngFor="let user of allUsers">-->
-    <!--<td>{{user.username}}</td>-->
-  <!--</tr>-->
-  <!--</tbody>-->
-<!--</table>-->
+<div id="user">
+  <mat-card id="gegevens">
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
+
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Gebruikersnaam" type="text"
+             [(ngModel)]="user.username" name="username" disabled value="user.username">
+    </mat-form-field>
+  </div>
+  <!--<div class="input">-->
+    <!--<mat-form-field class="example-full-width">-->
+      <!--<input matInput placeholder="Wachtwoord" type="password"  [(ngModel)]="user.password" name="password" disabled value="user.password">-->
+    <!--</mat-form-field>-->
+  <!--</div>-->
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Voornaam" type="text"  [(ngModel)]="user.firstname" name="firstname" disabled value="user.firstname">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width" *ngIf="user.preposition!=null">
+      <input matInput placeholder="Tussenvoegsel" type="text"  [(ngModel)]="user.preposition" name="preposition" disabled value="user.preposition">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Achternaam" type="text"  [(ngModel)]="user.lastname" name="lastname" disabled value="user.lastname">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" type="text"  [(ngModel)]="user.email" name="email" disabled value="user.email">
+    </mat-form-field>
+
+  </div>
+
+  <!--<mat-form-field *ngIf="role=='admin'">-->
+    <!--<mat-select [(value)]="user.role">-->
+      <!--<mat-option value="guest">Guest</mat-option>-->
+      <!--<mat-option value="admin">Admin</mat-option>-->
+    <!--</mat-select>-->
+  <!--</mat-form-field>-->
+  <!--<div class="input">-->
+    <!--<button mat-raised-button input type="submit">Updaten</button>-->
+  <!--</div>-->
+</form>
+  </mat-card>
+</div>

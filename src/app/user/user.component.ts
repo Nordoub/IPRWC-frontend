@@ -10,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class UserComponent implements OnInit {
 
-  user = new User(1, 'root','root','norddin','-','oubahman','test@hotmail.com','admin');
+  user:User;
   public allUsers: Observable<User[]>;
 
   constructor(private userService:UserService) {
@@ -19,6 +19,9 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userService.getMe().subscribe(user => {
+      this.user = user;
+    });
   }
   register(){
     this.userService.register(this.user);
@@ -27,10 +30,13 @@ export class UserComponent implements OnInit {
   getUsers() {
     this.allUsers = this.userService.getAll();
   }
+  onSubmit() {
+    if(this.user.username!=null) {this.userService.updateUser(this.user)}
+  }
 }
-@Component({
-  selector: 'app-message',
-  template: '<p>Product is aan uw winkelwagen toegevoegd.</p>',
-  styles: [`.example-pizza-party { color: hotpink; }`],
-})
-export class MessageComponent {}
+// @Component({
+//   selector: 'app-message',
+//   template: '<p>Product is aan uw winkelwagen toegevoegd.</p>',
+//   styles: [`.example-pizza-party { color: hotpink; }`],
+// })
+// export class MessageComponent {}
